@@ -5,8 +5,8 @@ import { API_ENDPOINTS } from '../Shared/config/api-endpoints';
 import { Observable } from 'rxjs';
 import { AuthResult, LoginRequest } from '../Shared/models/models';
 import { tap } from 'rxjs/operators';
-const TOKEN_KEY = 'mykart_access_token';
-const REFRESH_KEY = 'mykart_refresh_token';
+const TOKEN_KEY = 'accessToken';
+const REFRESH_KEY = 'refreshToken';
 @Injectable({
   providedIn: 'root',
 })

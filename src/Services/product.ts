@@ -8,14 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class Product {
   private products: any[] = [];
 private apiUrl = environment.apiUrl;
-private productEndpoint = API_ENDPOINTS.product;
+
 
   constructor(private httpClient: HttpClient) {
-
-
   }
-
-  getProducts():Product[] {
-return this.httpClient.get<Product[]>(this.productEndpoint);
+ getProducts() {
+    console.log('API URL:', `${this.apiUrl}/product/Product`);
+    return this.httpClient.get<any[]>(`${this.apiUrl}/product/Product`);
+    
   }
 }

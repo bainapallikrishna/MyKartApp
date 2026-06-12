@@ -1,0 +1,17 @@
+<p>products works!</p>
+<table table class="table table-striped">
+  <tr>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Category ID</th>
+    <th>Price</th>
+    <th>Quantity Available</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.productId }}</td>
+    <td>{{ product.productName }}</td>
+    <td>{{ product.categoryId }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.quantityAvailable }}</td>
+    
+  </tr>
