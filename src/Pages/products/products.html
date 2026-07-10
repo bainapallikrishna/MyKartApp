@@ -1,17 +1,62 @@
-<p>products works!</p>
-<table table class="table table-striped">
-  <tr>
-    <th>Product ID</th>
-    <th>Product Name</th>
-    <th>Category ID</th>
-    <th>Price</th>
-    <th>Quantity Available</th>
-  </tr>
-  <tr *ngFor="let product of products">
-    <td>{{ product.productId }}</td>
-    <td>{{ product.productName }}</td>
-    <td>{{ product.categoryId }}</td>
-    <td>{{ product.price }}</td>
-    <td>{{ product.quantityAvailable }}</td>
-    
-  </tr>
+<div class="product-container">
+  <div class="header">
+    <h2>Products</h2>
+    <span class="count">{{ products.length }} Products</span>
+  </div>
+<h2>Service not available at this moment !!!</h2>
+  <div class="table-card" *ngIf="products.length > 0;">
+
+    <table class="product-table">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Available Qty</th>
+          <th>Actions</th>
+
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.productId }}</td>
+
+          <td class="product-name">
+            {{ product.productName }}
+          </td>
+
+          <td>
+            <span class="category-badge">
+              {{ product.categoryId }}
+            </span>
+          </td>
+
+          <td class="price">
+            ₹{{ product.price }}
+          </td>
+
+          <td>
+            <span
+              [class.in-stock]="product.quantityAvailable > 10"
+              [class.low-stock]="product.quantityAvailable <= 10">
+
+              {{ product.quantityAvailable }}
+
+            </span>
+          </td>
+          <td>
+  <button class="edit-btn">Edit</button>
+  <button class="delete-btn">Delete</button>
+</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

@@ -3,9 +3,10 @@ import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Authservice } from '../../Services/authservice';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -23,12 +24,17 @@ export class Login {
     this.error = '';
    this.auth.login({ email: "krishna", password: "krishna@123" }).subscribe({
       next: (result) => {
-        console.log('Login successful:', result);
+       
         this.accessToken = result.accessToken;
         this.refreshToken = result.refreshToken;
-        this.router.navigate(['/products']);
+        this.router.navigate(['/User']);
       },
       error: (_error: any) => this.error = 'Invalid email or password. Register first if you have no account.'
     });
+  }
+
+  logout(): void {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
   }
 }

@@ -1,0 +1,72 @@
+<div class="user-container">
+  <div class="table-card">
+
+    <div class="table-header">
+      <h2>👥 User Management</h2>
+      <span>{{ users.length }} Users</span>
+    </div>
+
+    <div class="table-responsive">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Attempts</th>
+            <th>Lockout</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>
+              <div class="email">
+                <div class="avatar">
+                  {{ user.emailId.charAt(0).toUpperCase() }}
+                </div>
+                <span>{{ user.emailId }}</span>
+              </div>
+            </td>
+
+            <td>
+              <span class="password">••••••••</span>
+            </td>
+
+            <td>
+              <span
+                class="badge"
+                [ngClass]="{
+                  'admin': user.roleName === 'Admin',
+                  'user': user.roleName !== 'Admin'
+                }">
+                {{ user.roleName }}
+              </span>
+            </td>
+
+            <td>
+              <span class="attempt">
+                {{ user.failedLoginAttempts }}
+              </span>
+            </td>
+
+            <td>
+              {{ user.lockoutEnd || 'Not Locked' }}
+            </td>
+
+            <td>{{ user.gender }}</td>
+
+            <td>{{ user.dateOfBirth | date:'dd MMM yyyy' }}</td>
+
+            <td>{{ user.address }}</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>

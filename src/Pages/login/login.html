@@ -1,11 +1,46 @@
-<p>login works!</p>
-Access token<textarea width="300" height="100">{{accessToken}}</textarea><br>
-Refresh token<textarea width="300" height="100">{{refreshToken}}</textarea><br>
-<form (ngSubmit)="submit()">
-  <label for="email">Email:</label>
-  <input type="email" id="email" [(ngModel)]="email" name="email" required>
-  
-  <label for="password">Password:</label>
-  <input type="password" id="password" [(ngModel)]="password" name="password" required>
-  
-  <button type="submit">Login</button>
+<div class="login-container">
+  <div class="login-card">
+
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to MyKart</p>
+
+    <form (ngSubmit)="submit()">
+
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Enter your email"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Enter your password"
+          required>
+      </div>
+
+      <button type="submit" class="login-btn">
+        Login
+      </button>
+
+    </form>
+
+    <div *ngIf="accessToken" class="token-section">
+      <h4>Access Token</h4>
+      <textarea readonly>{{accessToken}}</textarea>
+    </div>
+
+    <div *ngIf="refreshToken" class="token-section">
+      <h4>Refresh Token</h4>
+      <textarea readonly>{{refreshToken}}</textarea>
+    </div>
+
+  </div>
+</div>

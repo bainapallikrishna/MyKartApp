@@ -1,0 +1,194 @@
+body{
+    background:#eef3f9;
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+}
+
+.user-container{
+    padding:40px;
+}
+
+.table-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    overflow:hidden;
+}
+
+.table-header{
+
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+
+    color:#fff;
+
+    padding:20px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.table-header h2{
+
+    margin:0;
+
+    font-size:28px;
+}
+
+.table-header span{
+
+    background:#ffffff30;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-weight:600;
+}
+
+.user-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+.user-table thead{
+
+    background:#f7f9fc;
+}
+
+.user-table th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#555;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.user-table td{
+
+    padding:18px;
+
+    border-top:1px solid #eee;
+
+    vertical-align:middle;
+}
+
+.user-table tbody tr{
+
+    transition:.3s;
+}
+
+.user-table tbody tr:hover{
+
+    background:#f5f9ff;
+
+    transform:scale(1.01);
+}
+
+.email{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#007bff,#00c6ff);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:bold;
+
+    font-size:18px;
+}
+
+.password{
+
+    letter-spacing:3px;
+
+    color:#888;
+
+    font-weight:bold;
+}
+
+.badge{
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.admin{
+
+    background:#198754;
+}
+
+.user{
+
+    background:#0d6efd;
+}
+
+.attempt{
+
+    background:#fff4dd;
+
+    color:#d97706;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+}
+
+.table-responsive{
+
+    overflow:auto;
+}
+
+::-webkit-scrollbar{
+
+    height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#1e3c72;
+
+    border-radius:10px;
+}

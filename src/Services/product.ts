@@ -6,10 +6,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class Product {
-  private products: any[] = [];
+
 private apiUrl = environment.apiUrl;
-
-
   constructor(private httpClient: HttpClient) {
   }
  getProducts() {

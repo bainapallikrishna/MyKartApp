@@ -7,13 +7,14 @@ import {
 
 import { routes } from './app.routes';
 import { authInterceptor } from '../Shared/interceptors/auth.interceptor';
+import { loaderInterceptor } from '../Shared/interceptors/loader.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideHttpClient(
-      withInterceptors([authInterceptor])
+      withInterceptors([authInterceptor,loaderInterceptor])
     )
   ]
 };
